@@ -34,7 +34,7 @@ public class Cli_assignment1 {
                 case DASHBOARD: 
                     System.out.println("\n[1]. Create New Account ");
                     System.out.println("[2]. Deposit");
-                    System.out.println("[3]. Withdraws");
+                    System.out.println("[3]. Withdraw");
                     System.out.println("[4]. Transfer");
                     System.out.println("[5]. Check Accounnt Balance");
                     System.out.println("[6]. Delete");
@@ -61,6 +61,7 @@ public class Cli_assignment1 {
 
                     boolean valid;
                     String name;
+                    double deposit;
                     do{
                         valid = true;
                         System.out.print("Name: ");
@@ -79,6 +80,26 @@ public class Cli_assignment1 {
                             }
                         }
                     }while(!valid);
+
+                    do{
+
+                        System.out.print("Initial Deposit (Rs.): ");
+                        deposit =SCANNER.nextDouble();
+                        SCANNER.nextLine();
+
+                        if(!(deposit>=5000.00)){
+                            System.out.printf("%sInsufficient Amount. Initial deposit should be more than Rs.5000.00%s \n",COLOR_RED_BOLD, RESET);
+                            valid = false;
+                                    
+                    }else{
+                        System.out.println("Initial deposit was added successfuly");
+                        valid=true;
+                     }
+
+                    }while(!valid);
+
+                    
+
 
                     String[] newCustomers = new String[customers.length + 1];
                     for (int i = 0; i < customers.length; i++) {
