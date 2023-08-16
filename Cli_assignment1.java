@@ -98,9 +98,7 @@ public class Cli_assignment1 {
                         valid=true;
                      
 
-                     }
-
-
+                    }
 
                     }while(!valid);
 
