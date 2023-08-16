@@ -9,7 +9,7 @@ public class Cli_assignment1 {
         final String COLOR_RED_BOLD = "\033[31;1m";
         final String RESET = "\033[0m";
 
-        final String DASHBOARD = "Welcome to Smart Banking";
+        final String DASHBOARD = " Welcome to Smart Banking";
         final String CREATE_ACCOUNT = "Create New Account";
         final String DEPOSIT = "Deposit";
         final String WITHDRAWS="Withdraws";
@@ -96,7 +96,11 @@ public class Cli_assignment1 {
                     }else{
                         System.out.println("Initial deposit was added successfuly");
                         valid=true;
+                     
+
                      }
+
+
 
                     }while(!valid);
 
