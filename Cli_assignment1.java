@@ -19,6 +19,7 @@ public class Cli_assignment1 {
 
 
         String[] customers = new String[0];
+        double[] balances = new double[0];
         String screen = DASHBOARD;
 
         do {
@@ -84,12 +85,13 @@ public class Cli_assignment1 {
                     do{
 
                         System.out.print("Initial Deposit (Rs.): ");
-                        deposit =SCANNER.nextDouble();
-                        SCANNER.nextLine();
+                        deposit =SCANNER.nextDouble();SCANNER.nextLine();
 
                         if(!(deposit>=5000.00)){
                             System.out.printf("%sInsufficient Amount. Initial deposit should be more than Rs.5000.00%s \n",COLOR_RED_BOLD, RESET);
                             valid = false;
+                            
+                            
                                     
                     }else{
                         System.out.println("Initial deposit was added successfuly");
@@ -102,11 +104,14 @@ public class Cli_assignment1 {
 
 
                     String[] newCustomers = new String[customers.length + 1];
+                    double[] newBalances = new double[balances.length + 1];
                     for (int i = 0; i < customers.length; i++) {
                         newCustomers[i] = customers[i];
                     }
                     newCustomers[newCustomers.length -1] = name;
+                    newBalances[newBalances.length - 1] = deposit;
                     customers = newCustomers;
+                    balances =newBalances;
 
                     System.out.println();
                     System.out.print(name + " added sucessfully. Do you want to add new customer (Y/n)? ");
@@ -115,6 +120,7 @@ public class Cli_assignment1 {
                     break;
 
                 }
+
 
             }while(true);
 
